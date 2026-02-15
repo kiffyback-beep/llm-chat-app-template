@@ -22,7 +22,7 @@ export default {
       const imageBlob = await fetch(imageData.url);
       await env.R2_BUCKET.put(`image-${Date.now()}.png`, await imageBlob.blob());
       
-      return new Response(JSON.stringify({ imageUrl: `https://your-domain.com/image-${Date.now()}.png` }));
+      return new Response(JSON.stringify({ imageUrl: `https://files.nanobana.net/nano-banana/results/${Date.now()}.png` }));
     }
     
     return new Response('Image generator endpoint', { status: 200 });
